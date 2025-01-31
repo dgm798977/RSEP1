@@ -1,3 +1,5 @@
+#include <Arduino.h>
+
 int pinSensor = A0;
 int value;
 
@@ -8,9 +10,9 @@ void setup() {
 }
 
 void loop() {
-  value = AnalogRead(pinSensor);
+  value = analogRead(pinSensor);
   Serial.print(value);
-  Serial.println("es el valor leído en el pin");
+  Serial.println(" es el valor leído en el pin");
   delay(1000);
 
 }
