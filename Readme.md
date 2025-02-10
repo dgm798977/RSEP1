@@ -35,7 +35,7 @@ In this practice, we will explore the basics of working with the Arduino Nano 33
 📄 Main files:  
 - `06_sensors.ino`: obtaining values from different integrated sensors.
 
-### 📁 Section 7 - 07_I2CSENSORS
+### 📁 Section 7 - 07_I2Csensors
 📌 Working with integrated sensors from the board to obtain the registered values and sending the captured info via I2C to another board.
 📄 Main files:  
-- `06_sensors.ino`: obtaining values from different integrated sensors and using I2C to retrieve them on other board.
+- `07_I2Csensors.ino`: obtaining values from different integrated sensors and using I2C to retrieve them on other board.
