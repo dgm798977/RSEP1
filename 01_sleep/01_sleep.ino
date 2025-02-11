@@ -2,6 +2,7 @@
 
 int pinSensor = A0;
 int value;
+char buffer[40];
 
 void setup() {
   Serial.begin(9600);
@@ -11,8 +12,13 @@ void setup() {
 
 void loop() {
   value = analogRead(pinSensor);
+  /*Simplest way
   Serial.print(value);
-  Serial.println(" es el valor leído en el pin");
+  Serial.println(" is the obtained value");
+  */
+  
+  sprintf(buffer, "%d is the obtained value", value);
+  Serial.println(buffer);
   delay(1000);
 
 }
