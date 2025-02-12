@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include <TimerOne.h>
+#include "BBTimer.hpp"
 
 int pinSensor = A0;
 int pinPWM = 9;  

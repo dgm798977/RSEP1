@@ -28,7 +28,8 @@ In this practice, we will explore the basics of working with the Arduino Nano 33
 ### 📁 Section 5 - 05_I2C
 📌 Working with two boards in order to establish I2C communication between them.
 📄 Main files:  
-- `05_I2C.ino`: I2C communication between boards to turn on/off LED diode.
+- `05_I2C_reader.ino`: I2C communication between boards to turn on/off LED diode (reader board).
+- `05_I2C_writer.ino`: I2C communication between boards to turn on/off LED diode (writer board).
 
 ### 📁 Section 6 - 06_sensors
 📌 Working with integrated sensors from the board to obtain the registered values.
