@@ -1,3 +1,7 @@
+#include <Arduino.h>
+#include <Arduino_LSM9DS1.h>
+#include "BBTimer.hpp"
+
 void setup() {
   // put your setup code here, to run once:
 

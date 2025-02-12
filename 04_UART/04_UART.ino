@@ -2,13 +2,22 @@
 #include "BBTimer.hpp"
 
 int pinSensor = A0;
-volatile int adcValue;
 int valueNumber;
 int pwmValue;
-
+int adcValue;
+int timerValue;
+bool newData;
+String command;
 
 //Create timer
 BBTimer my_t3(BB_TIMER3);
+
+int obtainPMWValue(String command) {
+  int startIdx = command.indexOf('(') + 1; 
+  int endIdx = command.indexOf(')'); 
+  String strValue = command.substring(startIdx, endIdx); 
+  return strValue.toInt(); 
+}
 
 //Action when timer runs out
 void t3Callback() {
@@ -22,17 +31,17 @@ void setup() {
 
 void loop() {
   if (newData) { 
-    adcvalue = analogRead(pinSensor); 
-    Serial.println(value);
+    adcValue = analogRead(pinSensor); 
+    Serial.println(adcValue);
     newData = false;
   }
   
   if (Serial.available() > 0) {
-    String command = Serial.readStringUntil('\n'); 
+    command = Serial.readStringUntil('\n'); 
     command.trim(); 
     if (command == "ADC") {
       adcValue = analogRead(pinSensor);
-      Serial.print("ACD value is: ");
+      Serial.print("ADC value is: ");
       Serial.println(adcValue);
     }
     else if (command.startsWith("ADC(")) {
@@ -45,7 +54,6 @@ void loop() {
       else{
         my_t3.timerStop();
       }
-      }
     }
     else if (command.startsWith("PWM(")) {
       valueNumber = obtainPMWValue(command);
@@ -55,19 +63,11 @@ void loop() {
         Serial.print("PWM value set to: ");
         Serial.println(pwmValue);
       } else {
-        Serial.println("Valor no válido para PWM. Debe ser un número entre 0 y 9.");
+        Serial.println("Value not valid for PWM. It has to be between 0 and 9 (both included)");
       }
     }
     else {
       Serial.println("Comando no reconocido");
     }
   }
-}
-
-
-int obtainPMWValue(String command) {
-  int startIdx = command.indexOf('(') + 1; 
-  int endIdx = command.indexOf(')'); 
-  String strValue = command.substring(startIdx, endIdx); 
-  return strValue.toInt(); 
 }
