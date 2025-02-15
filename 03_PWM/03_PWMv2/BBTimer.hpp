@@ -78,6 +78,7 @@ public: // methods
 		nrf_timer->MODE      = 0UL;       // timer, not counter
 		nrf_timer->PRESCALER = 4UL;       // freq = 16Mhz / 2^prescaler = 1Mhz
 		nrf_timer->CC[0]     = period_us; // Counter is compared to this
+    nrf_timer->CC[1]     = 
 		nrf_timer->INTENSET  = 1UL << TIMER_INTENSET_COMPARE0_Pos;     // interrupt on compare event.
 		nrf_timer->SHORTS    = 1UL << TIMER_SHORTS_COMPARE0_CLEAR_Pos; // clear counter on compare event.
 

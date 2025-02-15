@@ -3,7 +3,7 @@
 
 
 int pinSensor = A0;
-int pinPWM = 9;  
+int pinPWM = 9;
 long frec = 5000;
 int PMWvalue;
 int value;
