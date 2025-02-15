@@ -3,6 +3,7 @@
 void setup() {
   Wire.begin(8);                // join i2c bus with address #8
   Wire.onReceive(receiveEvent); // function that executes whenever data is received from writer
+  Serial.println("Ready");
 }
 
 void loop() {

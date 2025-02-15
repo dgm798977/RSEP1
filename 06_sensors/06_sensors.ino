@@ -11,7 +11,7 @@ const byte DEVICE_ADDRESS = 8;
 
 #define ROWS 10 
 #define COLS 3
-float accBuffer[10][3];
+float accBuffer[ROWS][COLS];
 float gyroBuffer[ROWS][COLS];
 float magBuffer[ROWS][COLS];
 float buffer[ROWS][COLS];

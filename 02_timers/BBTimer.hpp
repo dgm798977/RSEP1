@@ -22,6 +22,7 @@
 #pragma once
 #include <nrf_timer.h>
 
+
 typedef enum {
 	BB_TIMER0 = 0,
 	BB_TIMER1,
